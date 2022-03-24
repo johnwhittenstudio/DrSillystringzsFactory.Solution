@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Machine
+
+<h4>Install a New Machine</h4>
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.MachineName)
+  @Html.TextBoxFor(model => model.MachineName)
+
+  @Html.LabelFor(model => model.InstallDate)
+  @Html.TextBoxFor(model => model.InstallDate)
+
+  @Html.LabelFor(model => model.MachineDetails)
+  @Html.TextBoxFor(model => model.MachineDetails)
+
+  <input type="submit" value="Install New Machine" />
+}
+<p>@Html.ActionLink("Show all Machines", "Index")</p>
