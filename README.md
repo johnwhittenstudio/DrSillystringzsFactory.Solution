@@ -1,4 +1,4 @@
-#  ⚙️ ➰ 🥽  **Dr. Sillystringz's Factory**  🦺  ➿ 🛠️   
+# ➰  ⚙️ 🧵 🥽  **Dr. Sillystringz's Factory**  🧶 🦺  🛠️ ➿   
 
 #### _a C# MVC many-to-many app to enable a factory manager to add a list of engineers, a list of machines, and specify which engineers are licensed to repair which machines._
 
