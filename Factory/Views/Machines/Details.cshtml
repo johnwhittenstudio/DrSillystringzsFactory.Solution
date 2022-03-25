@@ -17,10 +17,10 @@
         <h1>Machine Specs</h1>
       </div>
       <div class="card-body">
-        <h5>@Html.DisplayNameFor(model => model.MachineName):</h5><h2> @Html.DisplayFor(model => model.MachineName)</h2>
+        <em><h5 class="text-muted">@Html.DisplayNameFor(model => model.MachineName):</h5></em><h2 class="text-secondary"> @Html.DisplayFor(model => model.MachineName)</h2>
         <br>
-        <h5>@Html.DisplayNameFor(model => model.InstallDate):</h5><h3> @Html.DisplayFor(model => model.InstallDate)</h3>
-        <h6>@Html.DisplayNameFor(model => model.MachineDetails):</h6><h4> @Html.DisplayFor(model => model.MachineDetails)</h4>
+        <em><h5 class="text-muted">@Html.DisplayNameFor(model => model.InstallDate):</h5></em><h3> @Html.DisplayFor(model => model.InstallDate)</h3>
+        <em><h6 class="text-muted">@Html.DisplayNameFor(model => model.MachineDetails):</h6></em><h4> @Html.DisplayFor(model => model.MachineDetails)</h4>
           @if(@Model.JoinEntities.Count == 0)
           {
           <p>This machine has not been assigned to any engineers</p>
@@ -28,11 +28,11 @@
           else
           {
           <hr />
-          <h4>Engineers assigned to this machine:</h4>
+          <em><h4 class="text-muted">Engineers assigned to this machine:</h4></em>
           <ul>
           @foreach(var join in Model.JoinEntities)
           {
-            <li>@join.Engineer.Name</li>
+            <li><h4>@join.Engineer.Name</h4></li>
           }
           </ul>
           }
