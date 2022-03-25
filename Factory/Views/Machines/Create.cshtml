@@ -5,20 +5,50 @@
 @model Factory.Models.Machine
 <div class="container">
 <br>
-<h4>Install a New Machine</h4>
-@using (Html.BeginForm())
-{
-  @Html.LabelFor(model => model.MachineName)
-  @Html.TextBoxFor(model => model.MachineName)
-
-  @Html.LabelFor(model => model.InstallDate)
-  @Html.TextBoxFor(model => model.InstallDate)
-
-  @Html.LabelFor(model => model.MachineDetails)
-  @Html.TextBoxFor(model => model.MachineDetails)
-
-  <input type="submit" value="Install New Machine" class="btn btn-info"/>
-}
 <br>
-<p>@Html.ActionLink("Show all Machines", "Index")</p>
+<div class="column">
+  <div class=row>
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  &nbsp;  
+    <div class="card border-info mb-3" style="max-width: 40rem;">
+      <div class="card-header">
+        <h2>Install a New Machine</h2>
+      </div>
+      <div class="card-body">
+        @using (Html.BeginForm())
+        {
+          @Html.LabelFor(model => model.MachineName)
+          @Html.TextBoxFor(model => model.MachineName)
+          <br>
+          <br>
+          @Html.LabelFor(model => model.InstallDate)
+          @Html.TextBoxFor(model => model.InstallDate)
+          <br>
+          <br>
+          @Html.LabelFor(model => model.MachineDetails)
+          @Html.TextBoxFor(model => model.MachineDetails)
+          <br>
+          <br>
+          <hr>
+          <input type="submit" value="Install New Machine" class="btn btn-info"/>
+        }
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="col-md-3">
+    <br>
+    <button type="button" class="btn btn-info" style="max-height: 5rem; max-width: 15rem;">@Html.ActionLink("Show all Machines", "Index")</button>
+    <br>
+    <br>
+    <hr>
+    <button type="button" class="btn btn-info" style="max-height: 5rem; max-width: 15rem;">@Html.ActionLink("Home", "Index", "Home")</button>
+    </div>   
+  </div>
 </div>

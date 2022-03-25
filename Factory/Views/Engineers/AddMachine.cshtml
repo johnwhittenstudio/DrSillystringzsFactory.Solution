@@ -5,19 +5,44 @@
 @model Factory.Models.Engineer
 <div class="container">
 <br>
-<h2>Assign a Machine</h2>
-
-<h4>Assign a machine to this engineer: @Html.DisplayFor(model => model.Name)</h4>
-
-@using (Html.BeginForm())
-{
-  @Html.HiddenFor(model => model.EngineerId)
-
-  @Html.Label("Select Machine")
-  @Html.DropDownList("MachineId")
-
-  <input type="submit" value="Save" />
-}
 <br>
-<p>@Html.ActionLink("Back to Roster", "Index")</p>
+<div class="column">
+  <div class=row>
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  &nbsp;
+    <div class="card border-primary mb-3" style="max-width: 40rem;">
+      <div class="card-header">
+        <h2>Assign a Machine</h2>
+      </div>
+      <div class="card-body">
+        <h4>Assign a machine to this engineer:<h4> 
+        <h2> @Html.DisplayFor(model => model.Name)</h2>
+        <br>
+        @using (Html.BeginForm())
+        {
+          @Html.HiddenFor(model => model.EngineerId)
+
+          @Html.Label("Select Machine")
+          @Html.DropDownList("MachineId")
+          <br>
+          <br>
+          <input type="submit" value="Save" class="btn btn-primary"/>
+        }
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="col-md-3">
+    <br>
+    <button type="button" class="btn btn-primary" style="max-height: 5rem; max-width: 15rem;">@Html.ActionLink("Back to Roster", "Index")</button>
+    <br>
+    <br>
+    <hr>
+    <button type="button" class="btn btn-primary" style="max-height: 5rem; max-width: 15rem;">@Html.ActionLink("Home", "Index", "Home")</button>
+    </div>
+  </div>
 </div>

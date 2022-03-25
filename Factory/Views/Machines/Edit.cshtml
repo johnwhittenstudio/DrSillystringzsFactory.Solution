@@ -3,27 +3,56 @@
 }
 
 @model Factory.Models.Machine
-
 <div class="container">
 <br>
-<h2>Edit</h2>
-<h4>Edit the specs for: @Html.DisplayFor(model => model.MachineName)</h4>
-
-@using (Html.BeginForm())
-{
-  @Html.HiddenFor(model => model.MachineId)
-
-  @Html.LabelFor(model => model.MachineName)
-  @Html.EditorFor(model => model.MachineName)
-
-  @Html.LabelFor(model => model.InstallDate)
-  @Html.TextBoxFor(model => model.InstallDate)
-
-  @Html.LabelFor(model => model.MachineDetails)
-  @Html.TextBoxFor(model => model.MachineDetails)
-
-  <input type="submit" value="Save" class="btn btn-info"/>
-}
 <br>
-<p>@Html.ActionLink("Back to Machine Inventory", "Index")</p>
+<div class="column">
+  <div class=row>
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  &nbsp;  
+    <div class="card border-info mb-3" style="max-width: 40rem;">
+      <div class="card-header">
+        <h4>Update the specs for:</h4>
+        <h2> @Html.DisplayFor(model => model.MachineName)</h2>
+      </div>
+      <div class="card-body">
+
+        @using (Html.BeginForm())
+        {
+          @Html.HiddenFor(model => model.MachineId)
+
+          @Html.LabelFor(model => model.MachineName)
+          @Html.EditorFor(model => model.MachineName)
+          <br>
+          <br>
+          @Html.LabelFor(model => model.InstallDate)
+          @Html.TextBoxFor(model => model.InstallDate)
+          <br>
+          <br>
+          @Html.LabelFor(model => model.MachineDetails)
+          @Html.TextBoxFor(model => model.MachineDetails)
+          <br>
+          <br>
+          <hr>
+          <input type="submit" value="Save" class="btn btn-info"/>
+        }
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="col-md-3">
+    <br>
+    <button type="button" class="btn btn-info" style="max-height: 5rem; max-width: 20rem;">@Html.ActionLink("Back to Machine Inventory", "Index")</button>
+    <br>
+    <br>
+    <hr>
+    <button type="button" class="btn btn-info" style="max-height: 5rem; max-width: 15rem;">@Html.ActionLink("Home", "Index", "Home")</button>
+    </div>   
+  </div>
 </div>

@@ -2,10 +2,60 @@
   Layout = "_Layout";
 }
 <div class="container">
-<br>
-<h1>Welcome to Dr. Sillystringzs Factory Logistics</h1>
-<h4>Use this application to keep track of installed machines and hired engineers</h4>
-<br>
-<button class="btn btn-info">@Html.ActionLink("Engineers", "Index", "Engineers")</button>
-<button class="btn btn-info">@Html.ActionLink("Machines", "Index", "Machines")</button>
+  <br>
+  <br>
+  <center><h1>Welcome to Dr. Sillystringz's Factory Logistics</h1>
+  <img src="./img/emoji_01.png" width="75" /><img src="./img/emoji_04.png" width="75" />
+  <br>
+  <br>
+  <center></center><h4>Use this application to keep track of hired engineers and installed machines.</h4></center>
+  <br>
+  <br>
+    <div class="column">
+      <div class=row>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        <div class="card border-primary mb-3" style="max-width: 30rem;">
+          <div class="card-header">
+            <h2> @Html.ActionLink("Engineers", "Index", "Engineers")</h2>
+          </div>
+          <div class="card-body">
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            <img src="./img/emoji_01.png" width="75" />
+            &nbsp;
+            <img src="./img/emoji_02.png" width="155" />
+            &nbsp;
+            <img src="./img/emoji_01.png" width="75" />
+          </div>
+        </div>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        <div class="card border-info mb-3" style="max-height: 20rem; max-width: 30rem;">
+          <div class="card-header">
+            <h2> @Html.ActionLink("Machines", "Index", "Machines")</h2>
+          </div>
+          <div class="card-body">
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            <img src="./img/emoji_04.png" width="75" />
+            &nbsp;
+            <img src="./img/emoji_03.png" width="155" />
+            &nbsp;
+            <img src="./img/emoji_04.png" width="75" />
+          </div>
+        </div>
+      </div>
+    </div>
 </div>

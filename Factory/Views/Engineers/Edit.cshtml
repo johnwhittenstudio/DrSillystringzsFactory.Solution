@@ -5,28 +5,55 @@
 @model Factory.Models.Engineer
 <div class="container">
 <br>
-<h2>Reassign</h2>
-
-<h4>Reassign this Engineer: @Html.DisplayFor(model => model.Name)</h4>
-
-@using (Html.BeginForm())
-{
-  @Html.HiddenFor(model => model.EngineerId)
-
-  @Html.LabelFor(model => model.Name)
-  @Html.EditorFor(model => model.Name)
-
-  @Html.LabelFor(model => model.Specialty)
-  @Html.EditorFor(model => model.Specialty)
-
-  @Html.LabelFor(model => model.HireDate)
-  @Html.TextBoxFor(model => model.HireDate)
-
-  @Html.Label("Assign Machine")
-  @Html.DropDownList("MachineId")
-
-  <input type="submit" value="Save" class="btn btn-info"/>
-}
 <br>
-<p>@Html.ActionLink("Back to Roster", "Index")</p>
+<div class="column">
+  <div class=row>
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  &nbsp;  
+    <div class="card border-primary mb-3" style="max-width: 40rem;">
+      <div class="card-header">
+        <h4>Reassign this Engineer:</h4>
+        <h2>@Html.DisplayFor(model => model.Name)</h2>
+      </div>
+      <div class="card-body">
+        @using (Html.BeginForm())
+        {
+          @Html.HiddenFor(model => model.EngineerId)
+
+          @Html.LabelFor(model => model.Name)
+          @Html.EditorFor(model => model.Name)
+          <br>
+          <br>
+          @Html.LabelFor(model => model.Specialty)
+          @Html.EditorFor(model => model.Specialty)
+          <br>
+          <br>
+          @Html.LabelFor(model => model.HireDate)
+          @Html.TextBoxFor(model => model.HireDate)
+          <br>
+          <br>
+          @Html.Label("Assign Machine")
+          @Html.DropDownList("MachineId")
+          <br>
+          <br>
+          <hr>
+          <input type="submit" value="Save" class="btn btn-primary"/>
+        }
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="col-md-3">
+    <br>
+    <button type="button" class="btn btn-primary" style="max-height: 5rem; max-width: 20rem;">@Html.ActionLink("Back to Roster", "Index")</button>
+    <br>
+    <br>
+    <hr>
+    <button type="button" class="btn btn-primary" style="max-height: 5rem; max-width: 15rem;">@Html.ActionLink("Home", "Index", "Home")</button>
+    </div>   
+  </div>
 </div>

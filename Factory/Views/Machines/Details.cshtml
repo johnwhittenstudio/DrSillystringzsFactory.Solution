@@ -5,30 +5,56 @@
 @model Factory.Models.Machine;
 <div class="container">
 <br>
-<h2>Machine Specs</h2>
-<hr />
-<h3>@Html.DisplayNameFor(model => model.MachineName): @Html.DisplayFor(model => model.MachineName)</h3>
-<h4>@Html.DisplayNameFor(model => model.InstallDate): @Html.DisplayFor(model => model.InstallDate)</h4>
-<h5>@Html.DisplayNameFor(model => model.MachineDetails): @Html.DisplayFor(model => model.MachineDetails)</h5>
+<br>
+<div class="column">
+  <div class=row>
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  &nbsp;  
+    <div class="card border-info mb-3" style="max-width: 40rem;">
+      <div class="card-header">
+        <h2>Machine Specs</h2>
+      </div>
+      <div class="card-body">
+        <h5>@Html.DisplayNameFor(model => model.MachineName):</h5><h2> @Html.DisplayFor(model => model.MachineName)</h2>
+        <br>
+        <h5>@Html.DisplayNameFor(model => model.InstallDate):</h5><h3> @Html.DisplayFor(model => model.InstallDate)</h3>
+        <h6>@Html.DisplayNameFor(model => model.MachineDetails):</h6><h4> @Html.DisplayFor(model => model.MachineDetails)</h4>
+          @if(@Model.JoinEntities.Count == 0)
+          {
+          <p>This machine has not been assigned to any engineers</p>
+          }
+          else
+          {
+          <hr />
+          <h4>Engineers assigned to this machine:</h4>
+          <ul>
+          @foreach(var join in Model.JoinEntities)
+          {
+            <li>@join.Engineer.Name</li>
+          }
+          </ul>
+          }
+      </div>
+    </div>
 
-@if(@Model.JoinEntities.Count == 0)
-{
-  <p>This machine has not been assigned to any engineers</p>
-}
-else
-{
-  <br>
-  <h4>Engineers assigned to this machine:</h4>
-  <ul>
-  @foreach(var join in Model.JoinEntities)
-  {
-    <li>@join.Engineer.Name</li>
-  }
-  </ul>
-}
-<br>
-<p>@Html.ActionLink("Edit Machine Specs", "Edit", new { id = Model.MachineId })</p>
-<p>@Html.ActionLink("Deinstall Machine", "Delete", new { id = Model.MachineId })</p>
-<br>
-<p>@Html.ActionLink("Back to Machine Inventory", "Index")</p>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="col-md-3">
+    <br>
+    <button type="button" class="btn btn-info" style="max-height: 5rem; max-width: 15rem;">@Html.ActionLink("Edit Machine Specs", "Edit", new { id = Model.MachineId })</button>
+    <br>
+    <br>
+    <button type="button" class="btn btn-info" style="max-height: 5rem; max-width: 15rem;">@Html.ActionLink("Deinstall Machine", "Delete", new { id = Model.MachineId })</button>
+    <br>
+    <br>
+    <hr>
+    <button type="button" class="btn btn-info" style="max-height: 5rem; max-width: 20rem;">@Html.ActionLink("Back to Machine Inventory", "Index")</button>
+    </div> 
+    
+  </div>
 </div>
