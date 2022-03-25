@@ -4,9 +4,10 @@
 
 @model Factory.Models.Machine
 
+<div class="container">
+<br>
 <h2>Edit</h2>
-
-<h4>Edit the specs for this machine: @Html.DisplayFor(model => model.MachineName)</h4>
+<h4>Edit the specs for: @Html.DisplayFor(model => model.MachineName)</h4>
 
 @using (Html.BeginForm())
 {
@@ -21,6 +22,8 @@
   @Html.LabelFor(model => model.MachineDetails)
   @Html.TextBoxFor(model => model.MachineDetails)
 
-  <input type="submit" value="Save" />
+  <input type="submit" value="Save" class="btn btn-info"/>
 }
+<br>
 <p>@Html.ActionLink("Back to Machine Inventory", "Index")</p>
+</div>

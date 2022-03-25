@@ -3,12 +3,16 @@
 }
 
 @model Factory.Models.Engineer
-
+<div class="container">
+<br>
 <h2>Are you sure you want to decommission this engineer?</h2>
 
-@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
+@Html.DisplayNameFor(model => model.Name): <h3>@Html.DisplayFor(model => model.Name)</h3>
+<br>
 @using (Html.BeginForm())
 {
   <input type="submit" value="Delete" />
 }
-@Html.ActionLink("Back to Roster", "Index")
+<br>
+<p>@Html.ActionLink("Back to Roster", "Index")</p>
+</div>

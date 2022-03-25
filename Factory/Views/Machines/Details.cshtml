@@ -3,7 +3,8 @@
 }
 
 @model Factory.Models.Machine;
-
+<div class="container">
+<br>
 <h2>Machine Specs</h2>
 <hr />
 <h3>@Html.DisplayNameFor(model => model.MachineName): @Html.DisplayFor(model => model.MachineName)</h3>
@@ -16,6 +17,7 @@
 }
 else
 {
+  <br>
   <h4>Engineers assigned to this machine:</h4>
   <ul>
   @foreach(var join in Model.JoinEntities)
@@ -24,7 +26,9 @@ else
   }
   </ul>
 }
-
-<p>@Html.ActionLink("Back to Machine Inventory", "Index")</p>
+<br>
 <p>@Html.ActionLink("Edit Machine Specs", "Edit", new { id = Model.MachineId })</p>
 <p>@Html.ActionLink("Deinstall Machine", "Delete", new { id = Model.MachineId })</p>
+<br>
+<p>@Html.ActionLink("Back to Machine Inventory", "Index")</p>
+</div>
