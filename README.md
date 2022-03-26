@@ -6,16 +6,32 @@
 
 #### March 24, 2022
 
-## Technologies Used
+## Table of Contents
+
+1. [Technologies Used](#technologies)
+2. [Description](#description)
+3. [Setup/Installation Requirements](#setup)
+4. [Known Bugs](#bugs)
+5. [License](#license)
+6. [Contact Information](#contact)
+
+## Technologies Used <a id="technologies"></a>
 
 - C#
 - .NET 5.0
 - REPL
 - MySQL
 - Razor
-- ASP.NET Core
+- ASP.NET Core MVC
+- Microsoft.EntityFrameworkCore 5.0.0
+- Microsoft.EntityFrameworkCore.Design 5.0.0
+- Microsoft.NET.Sdk.Web
+- Microsoft.NET.Test.Sdk 15.0.0
+- MSTest.TestAdapter 1.3.2
+- MSTest.TestFramework 1.3.2
+- Pomelo.EntityFrameworkCore.MySql 5.0.0-alpha.2
 
-## Description
+## Description <a id="description"></a>
 
 A many-to-many app to enable a factory manager to keep track of their hired engineers, installed machines, and specify which engineers are licensed to repair which machines.
 
@@ -34,36 +50,29 @@ _You've been contracted by the factory of the famous Dr. Sillystringz to build a
 
 ![Schema](./Factory/wwwroot/img/schema_01.png)
 
-## Project Setup/Installation Instructions
+## Project Setup/Installation Instructions <a id="setup"></a>
 
 ### Install C#, .NET, MySQL Community Server and MySQL Workbench
 
 - Open the terminal on your local machine
 - If [C#](https://docs.microsoft.com/en-us/dotnet/csharp/) and [.NET](https://docs.microsoft.com/en-us/dotnet/) are not installed on your local device, follow the instructions here [here](https://www.learnhowtoprogram.com/c-and-net-part-time/getting-started-with-c/installing-c-and-net).
 - If [MySQL Community Server](https://dev.mysql.com/downloads/mysql/) and [MySQL Workbench](https://www.mysql.com/products/workbench/) are not installed on your local device, follow the instructions [here](https://www.learnhowtoprogram.com/c-and-net-part-time/getting-started-with-c/installing-and-configuring-mysql).
+- If [dotnet-ef](https://docs.microsoft.com/en-us/ef/core/cli/dotnet) is not installed on your local device, install it globally with the terminal command ```dotnet tool install --global dotnet-ef --version 5.0.2```.
 
 ### Clone the project
 
 - Open the terminal on your local computer.
 - Navigate to the parent directory of your preference.
 - Clone this project using `$ git clone https://github.com/johnwhittenstudio/DrSillystringzsFactory.Solution`
-- Navigate to the directory: `$ cd DrSillystringzsFactory.Solution`
-- Open in Vs code: `$ code .`
 
-### Import and connect the database
+
+
+### Scaffold and connect the database
 
 - Launch the MySQL server with the command `mysql -uroot -p[YOUR-PASSWORD-HERE]`
-- After the server starts running, open MySQL Workbench.
-- Select the MySQL instance in the _MySQLConnections_ section.
-- Select the **Navigator>Administration** tab.
-- In the Navigator>Administration window, select **Data Import/Restore**; the Data Import window will open.
-- In the **Import Options** section of the Data Import window, select **Import from Self-Contained File**.
-- Click the dots at the end of the **Import from Self-Contained** file field (three dots for windows, two dots for Mac) and a pop up box will open. In the pop up box, navigate to the `john_whitten.sql` file in the root directory of the project (BestRest.Solution/). Once correct file is selected, click open. The pop up box will close itself.
-- In the **Default Schema to be Imported To**, select the **New** button.
-- In the pop up box, name the schema `john_whitten`. Click **Ok**.
-- Navigate to the tab called **Import Progress** and click **Start Import** at the bottom right corner of the window.
-- After you are finished with the above steps, reopen the **Navigator > Schemas** tab. Right click and select **Refresh All**. Your new test database will appear.
-- Navigate to BestRest: `$ cd Factory` and type the following command in the terminal `$ touch appsettings.json`
+- Navigate to the directory: `$ cd DrSillystringzsFactory.Solution`
+- Open in Vs code: `$ code .`
+- Navigate to the project directory Factory: `$ cd Factory` and type the following command in the terminal `$ touch appsettings.json`
 - In the appsettings.json file enter the following code:
 
 ```
@@ -73,21 +82,21 @@ _You've been contracted by the factory of the famous Dr. Sillystringz to build a
     }
 }
 ```
+- Recreate project environment and install required dependencies with terminal command `$ dotnet restore`
+- Build the program with the command `$ dotnet build`
+- Scaffold the database with the command ```$ dotnet ef database update```
 
 ### Run the project
-
-- Navigate to BestRest: `$ cd Factory` and type the following command in the terminal `$ dotnet restore`
-- Build the program with the command `$ dotnet build`
 - Run the program with the command `$ dotnet run`
 
-## Known Bugs
+## Known Bugs <a id="bugs"></a>
 
 - _None._
 
-## License
+## License <a id="license"></a>
 
 [MIT License](https://opensource.org/licenses/MIT) © 2022 _John Whitten_
 
-## Contact
+## Contact <a id="contact"></a>
 
 John Whitten: [johnwhitten.studio@gmail.com](mailto:johnwhitten.studio@gmail.com)
