@@ -19,9 +19,7 @@
 
 - C#
 - .NET 5.0
-- REPL
 - MySQL
-- Razor
 - ASP.NET Core MVC
 - Microsoft.EntityFrameworkCore 5.0.0
 - Microsoft.EntityFrameworkCore.Design 5.0.0
