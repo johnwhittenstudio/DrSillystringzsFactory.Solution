@@ -1,10 +1,9 @@
-# ➰  ⚙️ 🧵 🥽  **Dr. Sillystringz's Factory**  🧶 🦺  🛠️ ➿   
+# <p align="center">➰  ⚙️ 🧵 🥽  **Dr. Sillystringz's Factory**  🧶 🦺  🛠️ ➿   
 
-#### _a C# MVC many-to-many app to enable a factory manager to add a list of engineers, a list of machines, and specify which engineers are licensed to repair which machines._
+#### _A C# MVC many-to-many app to enable a factory manager to add a list of engineers, a list of machines, and specify which engineers are licensed to repair which machines._ </p>
 
-#### by John Whitten**
-
-#### March 24, 2022
+#### by John Whitten** ~ March 24, 2022
+![Cover](./Factory/wwwroot/img/img_01.gif)
 
 ## Table of Contents
 
